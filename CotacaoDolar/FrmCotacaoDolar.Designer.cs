@@ -144,6 +144,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmCotacaoDolar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Currency Converter";
             this.ResumeLayout(false);
             this.PerformLayout();

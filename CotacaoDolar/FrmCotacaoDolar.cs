@@ -29,12 +29,18 @@ namespace CotacaoDolar
 
                         lblBuy.Text = market.Currency.Buy.ToString("C", CultureInfo.GetCultureInfo("pt-BR"));
                         lblSell.Text = String.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", market.Currency.Sell);
-                        lblVariation.Text = String.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:P}", market.Currency.Variation);
+                        lblVariation.Text = String.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:P}", market.Currency.Variation / 100);
+                    }
+                    else
+                    {
+                        lblBuy.Text = String.Empty;
+                        lblSell.Text = String.Empty;
+                        lblVariation.Text = String.Empty;
                     }
                 }
                 catch(HttpRequestException httpRquestException)
                 {
-                    Console.WriteLine(httpRquestException.StackTrace);
+                    Console.WriteLine(httpRquestException.StackTrace.ToString());
                 }
             }
         }
